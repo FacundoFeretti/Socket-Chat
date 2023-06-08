@@ -18,6 +18,7 @@ Swal.fire({
 
 chatbox.addEventListener("keyup", (evt) => {
     if(evt.key === "Enter"){
+        evt.preventDefault()
         socket.emit('message', {user: user, message: chatbox.value});
         chatbox.value == "";
     }
